@@ -1,17 +1,21 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import classes.Biblioteca;
+import classes.Livro;
+import classes.Usuario;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Biblioteca biblioteca = new Biblioteca();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Livro livro1 = new Livro("O Senhor dos Anéis", "J.R.R. Tolkien");
+        Livro livro2 = new Livro("1984", "George Orwell");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        biblioteca.adicionarLivro(livro1);
+        biblioteca.adicionarLivro(livro2);
+
+        Usuario usuario1 = new Usuario("Carlos Silva", "123456789");
+        biblioteca.cadastrarUsuario(usuario1);
+
+        biblioteca.emprestarLivro(usuario1, livro1);
+        biblioteca.devolverLivro(usuario1, livro1);
     }
 }
